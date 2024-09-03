@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName= "Navigation Item " + data.navItem if data.navItem or "Service Navigation Example" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      {{ pageName }}
+    </h1>
+
+    <!--
+    Links:
+
+    https://design-system.service.gov.uk/components/service-navigation/
+    
+    This is a fresh install, but first check you are on 5.6.0 of govuk frontend
+
+    0. First make a new layout that extends the current one
+
+    - for this I have made /layouts/main-with-service-navigation.njk
+    
+    1. Update the header
+
+    - remove the service name (I assume)
+
+    - follow:
+
+    To use the GOV.UK header and Service navigation and make them fit together visually, you’ll need to change the bottom blue border of the GOV.UK header to full width.
+
+    Apply a class govuk-header--full-width-border to the GOV.UK header. (use classes)
+
+
+    2. Extend with the navigation
+
+    - Add example navigation item
+
+    - use url params for state ?
+
+    3. Add in service banner example
+
+    - wrapped in container
+    -->
+  </div>
+</div>
+
+{% endblock %}
