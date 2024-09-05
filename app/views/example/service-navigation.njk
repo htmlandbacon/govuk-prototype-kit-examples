@@ -1,47 +1,62 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-with-service-navigation.njk" %}
 
-{% set pageName= "Navigation Item " + data.navItem if data.navItem or "Service Navigation Example" %}
+{% set pageName= "Navigation Item " + data.navItem if data.navItem != "undefined" or "Service Navigation Example" %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      {{ pageName }}
+      Making new layouts: Service navigation
     </h1>
-
-    <!--
-    Links:
-
-    https://design-system.service.gov.uk/components/service-navigation/
     
-    This is a fresh install, but first check you are on 5.6.0 of govuk frontend
+    <p>This is a fresh install, but first check you are on <a href="https://www.npmjs.com/package/govuk-frontend">5.6.0 of govuk frontend</a>.</p>
 
-    0. First make a new layout that extends the current one
-
-    - for this I have made /layouts/main-with-service-navigation.njk
+    <h2 class="govuk-heading-m">1. First make a new layout</h2>
+   
+    <p>First for this I have made file at  /layouts/main-with-service-navigation.njk</p>
     
-    1. Update the header
+    <p>We can use the {% raw %}{% header %}{% endraw %} block to add the new components.</p>
 
-    - remove the service name (I assume)
+    <h2 class="govuk-heading-m">2. Update the header</h2>
 
-    - follow:
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        Remove the service name
+      </li>
+      <li>
+          Apply a class govuk-header--full-width-border to the GOV.UK header. (use classes)
+      </li>
+    </ul>
 
-    To use the GOV.UK header and Service navigation and make them fit together visually, you’ll need to change the bottom blue border of the GOV.UK header to full width.
+    <h2 class="govuk-heading-m">3. Extend with the service navigation</h2>
+   
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        Add example service navigation item
+      </li>
+      <li>
+          use url params "navItem" for state and add a selected param
+      </li>
+    </ul>
 
-    Apply a class govuk-header--full-width-border to the GOV.UK header. (use classes)
+    <h2 class="govuk-heading-m">Links:</h2>
 
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a href="https://design-system.service.gov.uk/styles/page-template/">Page Template</a>
+      </li>
+      <li>
+        <a href="https://design-system.service.gov.uk/components/header/">GOV.UK header</a>
+      </li>
+      <li>
+        <a href="https://design-system.service.gov.uk/components/phase-banner/">Phase banner</a>
+      </li>
+      <li>
+        <a href="https://design-system.service.gov.uk/components/service-navigation/">Service navigation component</a>
+      </li>
+    </ul>
 
-    2. Extend with the navigation
-
-    - Add example navigation item
-
-    - use url params for state ?
-
-    3. Add in service banner example
-
-    - wrapped in container
-    -->
   </div>
 </div>
 
